@@ -44,10 +44,14 @@ This repository primarily utilizes:
     ```
 
 ## Learning Outcomes
-By completing these assignments and the final project, students gain practical experience in key areas of operating system design and implementation:
-- **Bash Scripting & Automation**: Developed skills in creating and debugging Bash scripts to automate tasks on distributed systems, demonstrating the ability to manage jobs, files, and processes through scripting.
-- **API Communication**: Learned how to send and receive data through APIs using C/C++, understanding the structure of HTTP requests and the principles of inter-process communication.
-- **Multithreading & Synchronization**: Gained hands-on experience in creating multithreaded applications, using synchronization primitives like mutexes and semaphores to avoid race conditions and ensure thread safety.
-- **Process Scheduling**: Implemented and compared various process scheduling algorithms, including FCFS, Round Robin, SPN, and HRRN, understanding their use cases, efficiency, and how they impact CPU utilization.
-- **Systems-Level Problem Solving**: Applied operating system concepts such as scheduling and resource allocation to real-world problems, culminating in the Elevator OS project, where the complexities of multithreading and inter-process communication were tackled.
+By completing these assignments and the final project, I gained practical experience in key areas of operating system design:
+
+- **Bash Scripting & Automation**: Developed skills in creating and debugging **Bash scripts** to automate tasks on distributed systems, managing jobs, files, and processes efficiently.
+- **API Communication**: Mastered sending and receiving data via **APIs** using C/C++, with a solid understanding of HTTP requests and inter-process communication.
+- **Multithreading & Synchronization**: Built multithreaded applications using synchronization techniques like **mutexes** and **semaphores** to ensure thread safety and prevent race conditions.
+- **Process Scheduling**: Implemented and analyzed scheduling algorithms, including **FCFS**, **Round Robin**, **SPN**, and **HRRN**, assessing their efficiency and impact on CPU utilization.
+- **Systems-Level Problem Solving**: Applied operating system concepts like scheduling and resource allocation, culminating in the **Elevator OS project** with real-world multithreading and API communication challenges.
+
+This experience deepened my understanding of operating system fundamentals and real-world problem-solving.
+
 
