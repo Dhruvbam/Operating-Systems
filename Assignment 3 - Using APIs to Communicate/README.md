@@ -1,5 +1,5 @@
 # Operating Systems - Assignment 3: Using APIs to Communicate
-![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/ass3.jpg)
+![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/ss.jpg)
 
 ## About
 This project is part of the **Operating Systems (CS 4352)** course at Texas Tech University. The goal of this assignment is to develop a C/C++ program that interacts with APIs hosted in a singularity container on the HPCC. The program communicates via **GET** and **PUT** requests, sending and retrieving data from the **/initialize** and **/modify** APIs.
