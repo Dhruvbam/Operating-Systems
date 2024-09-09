@@ -1,57 +1,82 @@
-# Operating Systems
-![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/ss.jpg)
+# Operating Systems - Assignment 5: Scheduling
+![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/ass5.jpg)
 
 ## About
-This repository contains four assignment projects and one final project completed as part of the Operating Systems (CS 4352) course at Texas Tech University. The assignments cover operating system concepts such as Bash scripting, API communication, multithreading, process scheduling, and system synchronization. The final project involves creating a scheduler for an elevator operating system, providing a comprehensive understanding of key OS principles.
+This project is part of the **Operating Systems (CS 4352)** course at Texas Tech University. The assignment focuses on simulating the scheduling of processes using various **CPU scheduling algorithms**. The program processes input from a file containing process data and simulates the execution of each process based on different scheduling policies.
 
-## Assignments Overview
+## Problem Statement
+The task involves writing a C/C++ program that simulates the scheduling of processes using the following algorithms:
+- **First Come First Serve (FCFS)**
+- **Round Robin (RR)** with quantum values of 10ms and 40ms
+- **Shortest Process Next (SPN)**
+- **Shortest Remaining Time (SRT)**
+- **Highest Response Ratio Next (HRRN)**
+- **Feedback (quantum = 10ms)**
 
-1. **Assignment 2: Bash, Makefiles, and Utilizing the HPCC**
-   - **Topic:** Bash Scripting and Makefiles
-   - **Description:** This assignment involves creating a Bash script for automating tasks such as file decryption and transformation on the HPCC, utilizing GNU 5.4.0.
+The input file contains process data, and the program must simulate these algorithms, producing output files indicating which process is running at each 10ms interval.
 
-2. **Assignment 3: Using APIs to Communicate**
-   - **Topic:** API Communication
-   - **Description:** A C/C++ program that interacts with APIs running in a singularity container. The program sends and retrieves data using PUT and GET requests to modify internal data objects.
+## Assignment Overview
 
-3. **Assignment 4: Multithreading**
-   - **Topic:** Multithreading and Mutex/Semaphores
-   - **Description:** A program that reads integers from a file and processes them concurrently using multiple threads, implementing mutexes or semaphores to ensure thread safety.
+1. **Assignment 5: Scheduling**
+   - **Topic:** Process Scheduling Algorithms
+   - **Description:** This assignment requires the implementation of several scheduling algorithms, simulating the scheduling of processes and generating an output file for each algorithm. Each output file will list the process running during each 10ms interval.
 
-4. **Assignment 5: Scheduling**
-   - **Topic:** Process Scheduling
-   - **Description:** This assignment simulates various process scheduling algorithms, including FCFS, Round Robin, SPN, SRT, and HRRN, based on process data provided through input files.
+## Project Structure
+- **ass5.cpp**: The main C++ program that implements the scheduling algorithms and simulates process execution.
+- **Makefile**: The Makefile used to compile the source code into an executable named `assignment_5`.
+- **CS4352 - Assignment 5.pdf**: The detailed assignment instructions.
 
-5. **Final Project: Elevator Operating System**
-   - **Topic:** Multithreading and API Communication
-   - **Description:** The final project involves developing a multithreaded scheduler for an Elevator OS that communicates with a Python-based system via asynchronous API calls, simulating real-time elevator operations.
+## Input/Output
+### Input File Specification
+- A plain text file where each line contains the following fields separated by tabs:
+  - **Process Identifier**: An alphanumeric string.
+  - **Arrival Time**: The time (in ms) when the process arrives.
+  - **Service Time**: A positive integer representing the time the process requires to complete.
+
+Example Input: P1 0 20 P2 10 50 P3 30 10 P4 50 30
+
+### Output Files
+The program will generate separate output files for each scheduling algorithm:
+1. **fcfs.out**: First Come First Serve
+2. **rr_10.out**: Round Robin (quantum = 10ms)
+3. **rr_40.out**: Round Robin (quantum = 40ms)
+4. **spn.out**: Shortest Process Next
+5. **srt.out**: Shortest Remaining Time
+6. **hrrn.out**: Highest Response Ratio Next
+7. **feedback.out**: Feedback (quantum = 10ms)
+
+Each line in the output files represents a 10ms interval, listing the process identifier that was running during that time.
+
+Example `fcfs.out`: P1 P1 P2 P2 P3 P4 P4
+
 
 ## Built With
-This repository primarily utilizes:
-- <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" width="36" height="36" alt="Bash" /></a> **Bash**: For scripting and job submission on the HPCC.
-- <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" width="36" height="36" alt="C Programming" /></a> **C/C++**: Used for API communication, multithreading, and scheduling algorithms.
+This assignment utilizes:
+- <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" width="36" height="36" alt="C Programming" /></a> **C/C++**: The core programming languages used to implement the scheduling algorithms.
+- **Makefiles**: Used to compile the C++ program into an executable on the HPCC.
 
 ## How to Use
 1. Clone the repository:
     ```bash
     git clone https://github.com/your-repo/operating-systems.git
+    cd assignment_5
     ```
-2. Navigate to the folder for the specific assignment.
-3. Compile and run the code using `make`:
+2. Compile the program using the Makefile:
     ```bash
     make
-    ./assignment_2.sh
+    ```
+3. Run the program with the input file:
+    ```bash
+    ./assignment_5 process_data.txt
     ```
 
 ## Learning Outcomes
-By completing these assignments and the final project, I gained practical experience in key areas of operating system design:
+By completing this assignment, I gained hands-on experience in:
 
-- **Bash Scripting & Automation**: Developed skills in creating and debugging **Bash scripts** to automate tasks on distributed systems, managing jobs, files, and processes efficiently.
-- **API Communication**: Mastered sending and receiving data via **APIs** using C/C++, with a solid understanding of HTTP requests and inter-process communication.
-- **Multithreading & Synchronization**: Built multithreaded applications using synchronization techniques like **mutexes** and **semaphores** to ensure thread safety and prevent race conditions.
-- **Process Scheduling**: Implemented and analyzed scheduling algorithms, including **FCFS**, **Round Robin**, **SPN**, and **HRRN**, assessing their efficiency and impact on CPU utilization.
-- **Systems-Level Problem Solving**: Applied operating system concepts like scheduling and resource allocation, culminating in the **Elevator OS project** with real-world multithreading and API communication challenges.
+- **Scheduling Algorithms**: Implemented multiple CPU scheduling algorithms, including **FCFS**, **Round Robin**, **SPN**, **SRT**, **HRRN**, and **Feedback**, gaining an understanding of their real-world applications and performance.
+- **Process Simulation**: Developed the ability to simulate process scheduling, processing data from input files, and analyzing the results across multiple scheduling policies.
+- **File Handling**: Enhanced my skills in managing input and output files, ensuring that the program produces accurate outputs for each 10ms time interval.
+- **Optimization & Efficiency**: Focused on optimizing scheduling to meet specific time constraints and ensuring that the program runs efficiently on high-performance computing systems.
 
-This experience deepened my understanding of operating system fundamentals and real-world problem-solving.
-
+These experiences helped solidify my understanding of operating system scheduling and resource management.
 
