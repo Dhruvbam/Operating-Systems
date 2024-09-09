@@ -1,5 +1,5 @@
 # Operating Systems
-![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/ss.jpg)
+![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/ass3.jpg)
 
 ## About
 This repository contains four assignment projects and one final project completed as part of the Operating Systems (CS 4352) course at Texas Tech University. The assignments cover operating system concepts such as Bash scripting, API communication, multithreading, process scheduling, and system synchronization. The final project involves creating a scheduler for an elevator operating system, providing a comprehensive understanding of key OS principles.
