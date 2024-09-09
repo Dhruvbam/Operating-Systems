@@ -1,57 +1,46 @@
-# Operating Systems
-![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/ss.jpg)
+# Operating Systems - Assignment 2: Bash, Makefiles, and Utilizing the HPCC
+![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/assignment2.jpg)
 
 ## About
-This repository contains four assignment projects and one final project completed as part of the Operating Systems (CS 4352) course at Texas Tech University. The assignments cover operating system concepts such as Bash scripting, API communication, multithreading, process scheduling, and system synchronization. The final project involves creating a scheduler for an elevator operating system, providing a comprehensive understanding of key OS principles.
+This project is part of the **Operating Systems (CS 4352)** course at Texas Tech University. The goal of this assignment is to automate file decryption and transformation tasks on the **HPCC** using a **Bash script** and a **Makefile**, utilizing GNU 5.4.0 for job submission and execution in a high-performance computing environment.
 
-## Assignments Overview
+## Problem Statement
+The task involves creating a submission script for the HPCC that performs specific actions, such as decrypting a file, transforming data using compiled C++ and C programs, and appending the Nth line from the output to a results file.
+
+## Assignment Overview
 
 1. **Assignment 2: Bash, Makefiles, and Utilizing the HPCC**
    - **Topic:** Bash Scripting and Makefiles
-   - **Description:** This assignment involves creating a Bash script for automating tasks such as file decryption and transformation on the HPCC, utilizing GNU 5.4.0.
+   - **Description:** This assignment involves writing a Bash script that automates file decryption, transformation, and data extraction on the **HPCC** using SLURM for job scheduling. The task requires integrating precompiled C and C++ binaries to process the data and output results to a file.
 
-2. **Assignment 3: Using APIs to Communicate**
-   - **Topic:** API Communication
-   - **Description:** A C/C++ program that interacts with APIs running in a singularity container. The program sends and retrieves data using PUT and GET requests to modify internal data objects.
-
-3. **Assignment 4: Multithreading**
-   - **Topic:** Multithreading and Mutex/Semaphores
-   - **Description:** A program that reads integers from a file and processes them concurrently using multiple threads, implementing mutexes or semaphores to ensure thread safety.
-
-4. **Assignment 5: Scheduling**
-   - **Topic:** Process Scheduling
-   - **Description:** This assignment simulates various process scheduling algorithms, including FCFS, Round Robin, SPN, SRT, and HRRN, based on process data provided through input files.
-
-5. **Final Project: Elevator Operating System**
-   - **Topic:** Multithreading and API Communication
-   - **Description:** The final project involves developing a multithreaded scheduler for an Elevator OS that communicates with a Python-based system via asynchronous API calls, simulating real-time elevator operations.
+## Project Structure
+- **assignment_2.sh**: The main Bash script that performs the decryption, data transformation, and appends the result to `a2_results.txt`.
+- **decrypt**: A compiled C++ program used to decrypt the provided file.
+- **transform**: A compiled C program used to transform data and provide the line number for extraction.
 
 ## Built With
-This repository primarily utilizes:
-- <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" width="36" height="36" alt="Bash" /></a> **Bash**: For scripting and job submission on the HPCC.
-- <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" width="36" height="36" alt="C Programming" /></a> **C/C++**: Used for API communication, multithreading, and scheduling algorithms.
+This assignment utilizes:
+- <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" width="36" height="36" alt="Bash" /></a> **Bash**: For scripting and task automation on the HPCC.
+- **C/C++**: Precompiled binaries are used to decrypt and transform files as part of the task.
 
 ## How to Use
 1. Clone the repository:
     ```bash
     git clone https://github.com/your-repo/operating-systems.git
+    cd assignment_2
     ```
-2. Navigate to the folder for the specific assignment.
-3. Compile and run the code using `make`:
+2. Submit the job to **SLURM** using the following command:
     ```bash
-    make
-    ./assignment_2.sh
+    sbatch assignment_2.sh
     ```
 
 ## Learning Outcomes
-By completing these assignments and the final project, I gained practical experience in key areas of operating system design:
+By completing this assignment, I gained valuable experience in:
 
-- **Bash Scripting & Automation**: Developed skills in creating and debugging **Bash scripts** to automate tasks on distributed systems, managing jobs, files, and processes efficiently.
-- **API Communication**: Mastered sending and receiving data via **APIs** using C/C++, with a solid understanding of HTTP requests and inter-process communication.
-- **Multithreading & Synchronization**: Built multithreaded applications using synchronization techniques like **mutexes** and **semaphores** to ensure thread safety and prevent race conditions.
-- **Process Scheduling**: Implemented and analyzed scheduling algorithms, including **FCFS**, **Round Robin**, **SPN**, and **HRRN**, assessing their efficiency and impact on CPU utilization.
-- **Systems-Level Problem Solving**: Applied operating system concepts like scheduling and resource allocation, culminating in the **Elevator OS project** with real-world multithreading and API communication challenges.
+- **Bash Scripting**: Enhanced my ability to write efficient **Bash scripts** to automate complex workflows, including job scheduling, file manipulation, and process control in a distributed environment.
+- **File Handling & Data Processing**: Gained hands-on experience working with **compiled C/C++ programs** for file decryption and transformation, while managing file input/output operations using automation tools.
+- **HPCC & SLURM Proficiency**: Acquired in-depth knowledge of working with **High-Performance Computing Clusters (HPCC)** and using **SLURM** for job scheduling and resource management, a critical skill in large-scale computing environments.
+- **Automation & Workflow Optimization**: Learned how to integrate precompiled binaries into a larger automated workflow, streamlining the process from decryption to data extraction with a focus on efficiency and scalability.
+- **Makefile Usage**: Developed the ability to use **Makefiles** to automate the compilation process and manage project dependencies, improving development workflow efficiency in a collaborative environment.
 
-This experience deepened my understanding of operating system fundamentals and real-world problem-solving.
-
-
+These experiences have strengthened my skills in task automation, scripting, and managing large computing tasks in distributed systems.
