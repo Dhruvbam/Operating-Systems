@@ -1,57 +1,58 @@
-# Operating Systems
-![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/ss.jpg)
+# Operating Systems - Assignment 3: Using APIs to Communicate
+![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/ass3.jpg)
 
 ## About
-This repository contains four assignment projects and one final project completed as part of the Operating Systems (CS 4352) course at Texas Tech University. The assignments cover operating system concepts such as Bash scripting, API communication, multithreading, process scheduling, and system synchronization. The final project involves creating a scheduler for an elevator operating system, providing a comprehensive understanding of key OS principles.
+This project is part of the **Operating Systems (CS 4352)** course at Texas Tech University. The goal of this assignment is to develop a C/C++ program that interacts with APIs hosted in a singularity container on the HPCC. The program communicates via **GET** and **PUT** requests, sending and retrieving data from the **/initialize** and **/modify** APIs.
 
-## Assignments Overview
+## Problem Statement
+Using the code provided as a template, the task is to modify and expand the program to communicate with the **/initialize** and **/modify** APIs through **PUT** and **GET** requests. The program must perform a sequence of data exchanges, printing values to standard output, and construct a **Makefile** to compile the program into a binary executable named `assignment_3`.
 
-1. **Assignment 2: Bash, Makefiles, and Utilizing the HPCC**
-   - **Topic:** Bash Scripting and Makefiles
-   - **Description:** This assignment involves creating a Bash script for automating tasks such as file decryption and transformation on the HPCC, utilizing GNU 5.4.0.
+## Assignment Overview
 
-2. **Assignment 3: Using APIs to Communicate**
-   - **Topic:** API Communication
-   - **Description:** A C/C++ program that interacts with APIs running in a singularity container. The program sends and retrieves data using PUT and GET requests to modify internal data objects.
+1. **Assignment 3: Using APIs to Communicate**
+   - **Topic:** API Communication in C/C++
+   - **Description:** This assignment involves writing a C/C++ program that communicates with APIs in a **singularity container**. The program must perform a series of **GET** and **PUT** requests to modify and retrieve integer values from the provided APIs. Additionally, the assignment includes constructing a **Makefile** to compile the source code into an executable.
 
-3. **Assignment 4: Multithreading**
-   - **Topic:** Multithreading and Mutex/Semaphores
-   - **Description:** A program that reads integers from a file and processes them concurrently using multiple threads, implementing mutexes or semaphores to ensure thread safety.
+## Project Structure
+- **assignment_3.cpp**: The C++ program that communicates with the **/initialize** and **/modify** APIs using **GET** and **PUT** requests.
+- **Makefile**: The Makefile used to compile the source code into a binary executable named `assignment_3`.
+- **CS4352 - Assignment 3.pdf**: The detailed assignment instructions.
 
-4. **Assignment 5: Scheduling**
-   - **Topic:** Process Scheduling
-   - **Description:** This assignment simulates various process scheduling algorithms, including FCFS, Round Robin, SPN, SRT, and HRRN, based on process data provided through input files.
+## API Definitions
+1. **/initialize**:
+   - **PUT**: Accepts an integer to initialize the internal data object.
+   - **GET**: Returns the altered form of the integer you supplied to **PUT**.
 
-5. **Final Project: Elevator Operating System**
-   - **Topic:** Multithreading and API Communication
-   - **Description:** The final project involves developing a multithreaded scheduler for an Elevator OS that communicates with a Python-based system via asynchronous API calls, simulating real-time elevator operations.
+2. **/modify**:
+   - **PUT**: Accepts an integer to modify the internal data object.
+   - **GET**: Returns the altered form of the integer you supplied to **PUT**.
 
 ## Built With
-This repository primarily utilizes:
-- <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" width="36" height="36" alt="Bash" /></a> **Bash**: For scripting and job submission on the HPCC.
-- <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" width="36" height="36" alt="C Programming" /></a> **C/C++**: Used for API communication, multithreading, and scheduling algorithms.
+This assignment utilizes:
+- <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" width="36" height="36" alt="C Programming" /></a> **C/C++**: The core programming languages used to interact with the APIs.
+- **Makefiles**: Used to automate the compilation process on the HPCC.
 
 ## How to Use
 1. Clone the repository:
     ```bash
     git clone https://github.com/your-repo/operating-systems.git
+    cd assignment_3
     ```
-2. Navigate to the folder for the specific assignment.
-3. Compile and run the code using `make`:
+2. Compile the program using the Makefile:
     ```bash
     make
-    ./assignment_2.sh
+    ```
+3. Submit the job to **SLURM** using the provided Bash script or run the binary directly:
+    ```bash
+    sbatch assignment_3.sh
     ```
 
 ## Learning Outcomes
-By completing these assignments and the final project, I gained practical experience in key areas of operating system design:
+By completing this assignment, I gained valuable experience in:
 
-- **Bash Scripting & Automation**: Developed skills in creating and debugging **Bash scripts** to automate tasks on distributed systems, managing jobs, files, and processes efficiently.
-- **API Communication**: Mastered sending and receiving data via **APIs** using C/C++, with a solid understanding of HTTP requests and inter-process communication.
-- **Multithreading & Synchronization**: Built multithreaded applications using synchronization techniques like **mutexes** and **semaphores** to ensure thread safety and prevent race conditions.
-- **Process Scheduling**: Implemented and analyzed scheduling algorithms, including **FCFS**, **Round Robin**, **SPN**, and **HRRN**, assessing their efficiency and impact on CPU utilization.
-- **Systems-Level Problem Solving**: Applied operating system concepts like scheduling and resource allocation, culminating in the **Elevator OS project** with real-world multithreading and API communication challenges.
+- **API Communication**: Mastered sending and retrieving data using **GET** and **PUT** requests to interact with APIs, applying real-world API communication concepts in a system-level programming context.
+- **C/C++ Programming**: Gained hands-on experience modifying and building C/C++ applications, with a focus on external communication and handling HTTP-like requests.
+- **Makefile Expertise**: Developed proficiency in writing **Makefiles** to automate compilation, ensuring an efficient development workflow on high-performance computing systems.
+- **HPCC & SLURM Integration**: Enhanced my understanding of deploying and running jobs on **HPCC** using **SLURM**, learning how to submit jobs for programs that require external API environments.
 
-This experience deepened my understanding of operating system fundamentals and real-world problem-solving.
-
-
+These skills have strengthened my ability to work on system-level programming tasks that require integration with external APIs.
