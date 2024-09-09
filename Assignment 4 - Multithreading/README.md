@@ -1,57 +1,64 @@
-# Operating Systems
-![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/ss.jpg)
+# Operating Systems - Assignment 4: Multithreading
+![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/ass4.gif)
 
 ## About
-This repository contains four assignment projects and one final project completed as part of the Operating Systems (CS 4352) course at Texas Tech University. The assignments cover operating system concepts such as Bash scripting, API communication, multithreading, process scheduling, and system synchronization. The final project involves creating a scheduler for an elevator operating system, providing a comprehensive understanding of key OS principles.
+This project is part of the **Operating Systems (CS 4352)** course at Texas Tech University. The goal of this assignment is to implement multithreading with **mutex locks** or **semaphores** to process integers from an input file and write them to various output files based on specific conditions, ensuring concurrency between threads.
 
-## Assignments Overview
+## Problem Statement
+Write a C/C++ program that reads signed integer data from a file, processes each integer based on its properties, and writes them to one or more output files. The program should run across at least two concurrent threads: one to read the data into a buffer and another to process the data and write it to the corresponding files. The solution must use **mutex locks** or **semaphores** to prevent interference between threads.
 
-1. **Assignment 2: Bash, Makefiles, and Utilizing the HPCC**
-   - **Topic:** Bash Scripting and Makefiles
-   - **Description:** This assignment involves creating a Bash script for automating tasks such as file decryption and transformation on the HPCC, utilizing GNU 5.4.0.
+## Assignment Overview
 
-2. **Assignment 3: Using APIs to Communicate**
-   - **Topic:** API Communication
-   - **Description:** A C/C++ program that interacts with APIs running in a singularity container. The program sends and retrieves data using PUT and GET requests to modify internal data objects.
-
-3. **Assignment 4: Multithreading**
+1. **Assignment 4: Multithreading**
    - **Topic:** Multithreading and Mutex/Semaphores
-   - **Description:** A program that reads integers from a file and processes them concurrently using multiple threads, implementing mutexes or semaphores to ensure thread safety.
+   - **Description:** This assignment requires the use of **multithreading** to handle file reading and processing concurrently. Data from an input file is categorized and written to several output files based on its properties (e.g., even/odd, positive/negative, square/cube). The solution must ensure thread safety and concurrent execution.
 
-4. **Assignment 5: Scheduling**
-   - **Topic:** Process Scheduling
-   - **Description:** This assignment simulates various process scheduling algorithms, including FCFS, Round Robin, SPN, SRT, and HRRN, based on process data provided through input files.
+## Project Structure
+- **ass4.cpp**: The main C++ program that implements multithreading, reading integers from the input file, and writing them to the appropriate output files.
+- **Makefile**: The makefile used to compile the source code into an executable named `assignment_4`.
+- **CS4352 - Assignment 4.pdf**: The detailed assignment instructions.
 
-5. **Final Project: Elevator Operating System**
-   - **Topic:** Multithreading and API Communication
-   - **Description:** The final project involves developing a multithreaded scheduler for an Elevator OS that communicates with a Python-based system via asynchronous API calls, simulating real-time elevator operations.
+## Input/Output
+### Input File Specification
+- A plain text file containing signed 32-bit integers (one per line).
+- Example: -34916
+
+### Output Files
+The program will generate several output files:
+1. **even.out**: Contains even integers.
+2. **odd.out**: Contains odd integers.
+3. **positive.out**: Contains positive integers.
+4. **negative.out**: Contains negative integers.
+5. **square.out**: Contains perfect squares.
+6. **cube.out**: Contains perfect cubes.
 
 ## Built With
-This repository primarily utilizes:
-- <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" width="36" height="36" alt="Bash" /></a> **Bash**: For scripting and job submission on the HPCC.
-- <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" width="36" height="36" alt="C Programming" /></a> **C/C++**: Used for API communication, multithreading, and scheduling algorithms.
+This assignment utilizes:
+- <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" width="36" height="36" alt="C Programming" /></a> **C/C++**: The core programming languages used for multithreading and file handling.
+- **Makefiles**: Used to compile the C++ program on HPCC.
 
 ## How to Use
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-repo/operating-systems.git
-    ```
-2. Navigate to the folder for the specific assignment.
-3. Compile and run the code using `make`:
-    ```bash
-    make
-    ./assignment_2.sh
-    ```
+  ```bash
+  git clone https://github.com/your-repo/operating-systems.git
+  cd assignment_4
+  ```
+2. Compile the program using the Makefile:
+  ```bash
+  make
+  ```
+3. Run the program with the input file as an argument:
+  ```bash
+  ./assignment_4 numbers.txt
+  ```
 
 ## Learning Outcomes
-By completing these assignments and the final project, I gained practical experience in key areas of operating system design:
+By completing this assignment, I gained practical experience in:
 
-- **Bash Scripting & Automation**: Developed skills in creating and debugging **Bash scripts** to automate tasks on distributed systems, managing jobs, files, and processes efficiently.
-- **API Communication**: Mastered sending and receiving data via **APIs** using C/C++, with a solid understanding of HTTP requests and inter-process communication.
-- **Multithreading & Synchronization**: Built multithreaded applications using synchronization techniques like **mutexes** and **semaphores** to ensure thread safety and prevent race conditions.
-- **Process Scheduling**: Implemented and analyzed scheduling algorithms, including **FCFS**, **Round Robin**, **SPN**, and **HRRN**, assessing their efficiency and impact on CPU utilization.
-- **Systems-Level Problem Solving**: Applied operating system concepts like scheduling and resource allocation, culminating in the **Elevator OS project** with real-world multithreading and API communication challenges.
+- **Multithreading**: Implemented multiple threads to handle file I/O and data processing simultaneously, improving my understanding of concurrent execution.
+- **Thread Synchronization**: Mastered the use of **mutex locks** and **semaphores** to ensure thread safety and prevent data corruption in multithreaded environments.
+- **File Handling & Data Processing**: Gained proficiency in reading data from files, processing it based on specific criteria, and writing the results to multiple output files, all while ensuring that the output order is maintained.
+- **Efficient Computing**: Optimized the program for high performance, ensuring it can handle large input files and make efficient use of system resources.
 
-This experience deepened my understanding of operating system fundamentals and real-world problem-solving.
-
+These experiences enhanced my ability to implement concurrency and solve problems involving large-scale data processing.
 
