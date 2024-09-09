@@ -1,57 +1,71 @@
-# Operating Systems
-![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/ss.jpg)
+# Operating Systems - Final Project: Elevator Operating System
+![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/fpss.jpg)
 
 ## About
-This repository contains four assignment projects and one final project completed as part of the Operating Systems (CS 4352) course at Texas Tech University. The assignments cover operating system concepts such as Bash scripting, API communication, multithreading, process scheduling, and system synchronization. The final project involves creating a scheduler for an elevator operating system, providing a comprehensive understanding of key OS principles.
+This project is part of the **Operating Systems (CS 4352)** course at Texas Tech University. The objective of this final project is to develop a **C/C++ scheduler** for an **Elevator Operating System** that communicates asynchronously with a Python-based system via API calls. The scheduler is responsible for managing multiple elevators in a building, optimizing the flow of passengers across various floors.
 
-## Assignments Overview
+## Problem Statement
+The task is to implement a scheduling system that coordinates elevator movements based on input data retrieved from APIs. The solution must manage the assignment of passengers to elevators using **multithreading** to handle communication and decision-making concurrently. The program must accept a building configuration file as a command-line argument, and the elevator operations should be handled through asynchronous API calls.
 
-1. **Assignment 2: Bash, Makefiles, and Utilizing the HPCC**
-   - **Topic:** Bash Scripting and Makefiles
-   - **Description:** This assignment involves creating a Bash script for automating tasks such as file decryption and transformation on the HPCC, utilizing GNU 5.4.0.
+## Project Overview
 
-2. **Assignment 3: Using APIs to Communicate**
-   - **Topic:** API Communication
-   - **Description:** A C/C++ program that interacts with APIs running in a singularity container. The program sends and retrieves data using PUT and GET requests to modify internal data objects.
-
-3. **Assignment 4: Multithreading**
-   - **Topic:** Multithreading and Mutex/Semaphores
-   - **Description:** A program that reads integers from a file and processes them concurrently using multiple threads, implementing mutexes or semaphores to ensure thread safety.
-
-4. **Assignment 5: Scheduling**
-   - **Topic:** Process Scheduling
-   - **Description:** This assignment simulates various process scheduling algorithms, including FCFS, Round Robin, SPN, SRT, and HRRN, based on process data provided through input files.
-
-5. **Final Project: Elevator Operating System**
+1. **Final Project: Elevator Operating System**
    - **Topic:** Multithreading and API Communication
-   - **Description:** The final project involves developing a multithreaded scheduler for an Elevator OS that communicates with a Python-based system via asynchronous API calls, simulating real-time elevator operations.
+   - **Description:** This project involves developing a **multithreaded scheduler** that coordinates elevators in a building by communicating with a Python-based Elevator OS via APIs. The scheduler must handle real-time data from APIs to assign passengers to elevators efficiently.
+
+## Project Structure
+- **main.cpp**: The main C++ program that implements the scheduler, handles API communication, and optimizes elevator usage through multithreading.
+- **Makefile**: The Makefile used to compile the source code into an executable named `scheduler_os`.
+- **CS4352 - Final Project.pdf**: The detailed final project instructions.
+
+## Key Requirements
+- **Multithreading**: The solution must use at least 3 threads:
+  1. **Input Communication Thread**: Handles communication with the `/NextInput` API to retrieve passenger data.
+  2. **Output Communication Thread**: Communicates with the `/AddPersonToElevator` API to assign passengers to elevators.
+  3. **Scheduler Computation Thread**: Makes decisions based on the input data and coordinates with the other threads.
+  
+- **Asynchronous API Communication**: The scheduler must communicate with the Elevator Operating System using asynchronous API calls to manage elevator movements.
+
+- **Input Format**: The program accepts a building configuration file (`.bldg`) as input, which contains details about elevator bays, floors, and capacity.
+
+### Building Configuration File (.bldg)
+- **Elevator Bay Name**: Alphanumeric identifier for each elevator bay.
+- **Lowest and Highest Floors**: The range of floors that the elevator services.
+- **Current Floor**: The floor the elevator starts on when the simulation begins.
+- **Total Capacity**: The maximum number of passengers an elevator can hold.
+
+## API Endpoints
+1. **/NextInput**: Retrieves the next passenger in the queue.
+2. **/AddPersonToElevator**: Assigns a passenger to an elevator.
+3. **/Simulation/start**: Starts the elevator simulation.
+4. **/Simulation/stop**: Stops the simulation.
 
 ## Built With
-This repository primarily utilizes:
-- <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" width="36" height="36" alt="Bash" /></a> **Bash**: For scripting and job submission on the HPCC.
-- <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" width="36" height="36" alt="C Programming" /></a> **C/C++**: Used for API communication, multithreading, and scheduling algorithms.
+This project utilizes:
+- <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" width="36" height="36" alt="C Programming" /></a> **C/C++**: The core programming languages used to implement the multithreaded scheduler.
+- **Makefiles**: Used to compile the program on the HPCC.
 
 ## How to Use
 1. Clone the repository:
     ```bash
     git clone https://github.com/your-repo/operating-systems.git
+    cd final_project
     ```
-2. Navigate to the folder for the specific assignment.
-3. Compile and run the code using `make`:
+2. Compile the program using the Makefile:
     ```bash
     make
-    ./assignment_2.sh
+    ```
+3. Run the scheduler with the building configuration file as an argument:
+    ```bash
+    ./scheduler_os building_config.bldg
     ```
 
 ## Learning Outcomes
-By completing these assignments and the final project, I gained practical experience in key areas of operating system design:
+By completing this final project, I developed key skills in:
 
-- **Bash Scripting & Automation**: Developed skills in creating and debugging **Bash scripts** to automate tasks on distributed systems, managing jobs, files, and processes efficiently.
-- **API Communication**: Mastered sending and receiving data via **APIs** using C/C++, with a solid understanding of HTTP requests and inter-process communication.
-- **Multithreading & Synchronization**: Built multithreaded applications using synchronization techniques like **mutexes** and **semaphores** to ensure thread safety and prevent race conditions.
-- **Process Scheduling**: Implemented and analyzed scheduling algorithms, including **FCFS**, **Round Robin**, **SPN**, and **HRRN**, assessing their efficiency and impact on CPU utilization.
-- **Systems-Level Problem Solving**: Applied operating system concepts like scheduling and resource allocation, culminating in the **Elevator OS project** with real-world multithreading and API communication challenges.
+- **Multithreading**: Designed a multithreaded application to handle real-time data processing, enabling efficient scheduling and communication between threads.
+- **Asynchronous API Communication**: Gained hands-on experience using asynchronous API calls to manage data flow between the scheduler and the Elevator Operating System, ensuring smooth and timely operations.
+- **Real-Time Decision Making**: Improved my ability to design systems that make real-time scheduling decisions based on continuous input from multiple data sources.
+- **System Optimization**: Focused on optimizing the scheduler to ensure the simulation meets specific runtime and performance constraints, ensuring efficient resource allocation and minimal delays in the elevator system.
 
-This experience deepened my understanding of operating system fundamentals and real-world problem-solving.
-
-
+This project deepened my understanding of multithreading, asynchronous communication, and real-time systems in a large-scale simulation environment.
