@@ -1,5 +1,5 @@
 # Operating Systems - Assignment 2: Bash, Makefiles, and Utilizing the HPCC
-![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/assignment2.jpg)
+![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/ass2.jpg)
 
 ## About
 This project is part of the **Operating Systems (CS 4352)** course at Texas Tech University. The goal of this assignment is to automate file decryption and transformation tasks on the **HPCC** using a **Bash script** and a **Makefile**, utilizing GNU 5.4.0 for job submission and execution in a high-performance computing environment.
