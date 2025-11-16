@@ -1,8 +1,7 @@
 # Operating Systems
 ![Image](https://github.com/Dhruvbam/Operating-Systems/blob/main/Images/ass3.jpg)
 
-## About
-This repository contains four project completed as part of the Operating Systems course. The assignments cover operating system concepts such as Bash scripting, API communication, multithreading, process scheduling, and system synchronization. The final project involves creating a scheduler for an elevator operating system, providing a comprehensive understanding of key OS principles.
+This covers a series of advanced projects from the Operating Systems course, that span across process scheduling, API communication, multithreading, and the development of an Elevator Operating System scheduler. Each project, developed in C/C++, explores a distinctive area of OS design like implementing Round Robin and Priority CPU Scheduling, developing robust multithreading and synchronization mechanisms and building a simulated environment for resource allocation. Together, these projects reflect a deep understanding of how modern operating systems function and demonstrate strong skills in problem-solving, system analysis, and implementation.
 
 ## Assignments Overview
 
@@ -30,18 +29,6 @@ This repository contains four project completed as part of the Operating Systems
 This repository primarily utilizes:
 - <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" width="36" height="36" alt="Bash" /></a> **Bash**: For scripting and job submission on the HPCC.
 - <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" width="36" height="36" alt="C Programming" /></a> **C/C++**: Used for API communication, multithreading, and scheduling algorithms.
-
-## How to Use
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-repo/operating-systems.git
-    ```
-2. Navigate to the folder for the specific assignment.
-3. Compile and run the code using `make`:
-    ```bash
-    make
-    ./assignment_2.sh
-    ```
 
 ## Learning Outcomes
 By completing these assignments and the final project, I gained practical experience in key areas of operating system design:
