@@ -3,25 +3,25 @@
 
 This covers a series of advanced projects from the Operating Systems course, that span across process scheduling, API communication, multithreading, and the development of an Elevator Operating System scheduler. Each project, developed in C/C++, explores a distinctive area of OS design like implementing Round Robin and Priority CPU Scheduling, developing robust multithreading and synchronization mechanisms and building a simulated environment for resource allocation. Together, these projects reflect a deep understanding of how modern operating systems function and demonstrate strong skills in problem-solving, system analysis, and implementation.
 
-## Assignments Overview
+## Project Overview
 
-1. **Assignment 2: Bash, Makefiles, and Utilizing the HPCC**
+1. **Bash, Makefiles, and Utilizing the HPCC**
    - **Topic:** Bash Scripting and Makefiles
    - **Description:** This assignment involves creating a Bash script for automating tasks such as file decryption and transformation on the HPCC, utilizing GNU 5.4.0.
 
-2. **Assignment 3: Using APIs to Communicate**
+2. **Using APIs to Communicate**
    - **Topic:** API Communication
    - **Description:** A C/C++ program that interacts with APIs running in a singularity container. The program sends and retrieves data using PUT and GET requests to modify internal data objects.
 
-3. **Assignment 4: Multithreading**
+3. **Multithreading**
    - **Topic:** Multithreading and Mutex/Semaphores
    - **Description:** A program that reads integers from a file and processes them concurrently using multiple threads, implementing mutexes or semaphores to ensure thread safety.
 
-4. **Assignment 5: Scheduling**
+4. **Scheduling**
    - **Topic:** Process Scheduling
    - **Description:** This assignment simulates various process scheduling algorithms, including FCFS, Round Robin, SPN, SRT, and HRRN, based on process data provided through input files.
 
-5. **Final Project: Elevator Operating System**
+5. **Elevator Operating System**
    - **Topic:** Multithreading and API Communication
    - **Description:** The final project involves developing a multithreaded scheduler for an Elevator OS that communicates with a Python-based system via asynchronous API calls, simulating real-time elevator operations.
 
